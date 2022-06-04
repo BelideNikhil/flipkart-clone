@@ -31,11 +31,19 @@ function filterBySize(list, selectedSizes) {
     return list;
 }
 
+function filterByBrands(list, selectedBrands) {
+    if (selectedBrands.length > 0) {
+        return list.filter((product) => selectedBrands.includes(product.brand));
+    }
+    return list;
+}
+
 export function sortAndFilter(list, filters) {
-    const { sortBy, idealFor, productSizes } = filters;
+    const { sortBy, idealFor, productSizes, selectedBrands } = filters;
 
     const sortedByPrice = sortByPrice(list, sortBy);
     const filteredByGender = filterByGender(sortedByPrice, idealFor);
     const filteredBySize = filterBySize(filteredByGender, productSizes);
-    return filteredBySize;
+    const filteredByBrands = filterByBrands(filteredBySize, selectedBrands);
+    return filteredByBrands;
 }

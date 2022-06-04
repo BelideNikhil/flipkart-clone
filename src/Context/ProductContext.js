@@ -6,6 +6,7 @@ const filtersInitial = {
     sortBy: "",
     idealFor: [],
     productSizes: [],
+    selectedBrands: [],
 };
 const initialState = {
     products: [
@@ -16,7 +17,7 @@ const initialState = {
             idealFor: "women",
             price: "599",
             brand: "souled store",
-            sizes: [ "M", "L"],
+            sizes: ["M", "L"],
         },
         {
             id: uuid(),
@@ -61,7 +62,16 @@ const initialState = {
             idealFor: "men",
             price: "899",
             brand: "souled store",
-            sizes: [ "M", "L"],
+            sizes: ["M", "L"],
+        },
+        {
+            id: uuid(),
+            title: "Solid Men Round Neck Blue T-Shirt",
+            imgSrc: "https://rukminim1.flixcart.com/image/880/1056/l251xu80/t-shirt/e/k/5/m-mshct1041-rigo-original-imagdjzgpvw2fazg.jpeg?q=50",
+            idealFor: "men",
+            price: "799",
+            brand: "rigo",
+            sizes: ["M", "L"],
         },
     ],
     filters: filtersInitial,
@@ -94,6 +104,16 @@ function productReducer(state, { type, payload }) {
                 },
             };
         }
+        case "SET_SELECTED_BRANDS":
+            return {
+                ...state,
+                filters: {
+                    ...state.filters,
+                    selectedBrands: state.filters.selectedBrands.includes(payload)
+                        ? state.filters.selectedBrands.filter((e) => e !== payload)
+                        : [...state.filters.selectedBrands, payload],
+                },
+            };
         default:
             return state;
     }

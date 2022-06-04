@@ -9,8 +9,9 @@ export default function ProductCard({ product }) {
             <div>
                 <div className="card-title">
                     <h4>{product.title}</h4>
+                    <h5>{product.brand.toUpperCase()}</h5>
                 </div>
-                <div>
+                <div className="card-price">
                     <i className="fas fa-rupee-sign"></i>
                     <span>{product.price}</span>
                 </div>
