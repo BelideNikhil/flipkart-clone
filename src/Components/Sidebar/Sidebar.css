@@ -1,0 +1,18 @@
+.sidebar-wrapper {
+    background-color: whitesmoke;
+    padding: 1rem 2rem;
+}
+.clear-btn {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.filter-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.25rem;
+}
+
+.filter-label input {
+    margin-right: 0.5rem;
+}

@@ -1,0 +1,23 @@
+@import url(./Utils.css);
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color-primary: #2874f0;
+    --color-secondary: #ff9f00;
+    --color-white: #fff;
+}
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+}

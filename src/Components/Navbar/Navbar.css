@@ -1,0 +1,11 @@
+.header {
+    height: 4.75rem;
+    background-color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    color: var(--color-white);
+}
+
+.header .logo {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
